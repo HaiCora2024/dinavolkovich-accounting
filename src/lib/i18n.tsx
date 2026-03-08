@@ -225,7 +225,7 @@ const I18nContext = createContext<I18nContextType>({
 });
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Lang>("ru");
+  const [lang, setLang] = useState<Lang>("pl");
 
   const translate = (key: string): string => {
     return t[key]?.[lang] ?? key;
