@@ -141,7 +141,7 @@ const Contact = () => {
             </div>
             <div className="flex gap-3 pt-4">
               <a
-                href="https://t.me/+48571287322"
+                href="https://t.me/DinaVo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-md border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors"
