@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import About from "@/components/About";
+import Founder from "@/components/Founder";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <Process />
       <Pricing />
       <About />
+      <Founder />
       <Contact />
       <Footer />
     </div>
