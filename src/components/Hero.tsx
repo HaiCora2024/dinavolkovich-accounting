@@ -62,7 +62,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-primary/10 rounded-2xl -rotate-2" />
             <img
-              src="/hero-bg.jpg"
+              src={heroBg}
               alt="Профессиональное рабочее пространство"
               className="relative rounded-xl w-full object-cover aspect-[4/3]"
             />
