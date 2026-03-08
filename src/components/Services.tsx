@@ -1,65 +1,34 @@
 import { motion } from "framer-motion";
 import { BookOpen, Building2, Users, FileText, Briefcase } from "lucide-react";
-
-const services = [
-  {
-    icon: BookOpen,
-    title: "Бухгалтерия JDG",
-    desc: "Полное ведение бухгалтерии для индивидуальных предпринимателей. Книга доходов и расходов, stawka ryczałtowa.",
-  },
-  {
-    icon: Building2,
-    title: "Бухгалтерия sp. z o.o.",
-    desc: "Полная бухгалтерия для компаний, включая KPiR, CIT, VAT, годовую отчётность.",
-  },
-  {
-    icon: Users,
-    title: "Кадры и зарплаты",
-    desc: "Kadry i płace — расчёт зарплат, ZUS, трудовые договоры, umowy zlecenie и о dzieło.",
-  },
-  {
-    icon: FileText,
-    title: "Регистрация бизнеса",
-    desc: "Помощь в регистрации JDG и sp. z o.o. — от выбора формы до получения NIP и REGON.",
-  },
-  {
-    icon: Briefcase,
-    title: "Консультации",
-    desc: "Налоговые, юридические и управленческие консультации для предпринимателей.",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.5 },
-  }),
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5 } }),
 };
 
 const Services = () => {
+  const { t } = useI18n();
+  const services = [
+    { icon: BookOpen, title: t("services.s1.title"), desc: t("services.s1.desc") },
+    { icon: Building2, title: t("services.s2.title"), desc: t("services.s2.desc") },
+    { icon: Users, title: t("services.s3.title"), desc: t("services.s3.desc") },
+    { icon: FileText, title: t("services.s4.title"), desc: t("services.s4.desc") },
+    { icon: Briefcase, title: t("services.s5.title"), desc: t("services.s5.desc") },
+  ];
+
   return (
     <section id="services" className="section-padding bg-card">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="gold-line w-16 mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Наши услуги</h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Полный спектр бухгалтерских услуг для вашего бизнеса в Польше
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">{t("services.title")}</h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">{t("services.desc")}</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeUp}
-              className="group p-8 rounded-xl border border-border bg-background hover:border-accent transition-colors"
-            >
+            <motion.div key={s.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp}
+              className="group p-8 rounded-xl border border-border bg-background hover:border-accent transition-colors">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
                 <s.icon className="w-6 h-6 text-primary" />
               </div>
