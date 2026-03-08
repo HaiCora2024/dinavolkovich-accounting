@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useI18n } from "@/lib/i18n";
 
 const Hero = () => {
+  const { t } = useI18n();
   return (
     <section className="relative min-h-screen flex items-center section-padding pt-32">
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
@@ -12,44 +14,37 @@ const Hero = () => {
         >
           <div className="gold-line w-16 mb-6" />
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-            Бухгалтерия
+            {t("hero.t1")}
             <br />
-            <span className="text-primary">для вашего бизнеса</span>
+            <span className="text-primary">{t("hero.t2")}</span>
             <br />
-            в Польше
+            {t("hero.t3")}
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
-            Профессиональное бухгалтерское обслуживание для JDG и sp.&nbsp;z&nbsp;o.o. 
-            Работаем онлайн по всей Польше. Русский, английский, польский.
+            {t("hero.desc")}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              className="bg-primary text-primary-foreground px-7 py-3.5 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Записаться на консультацию
+            <a href="#contact" className="bg-primary text-primary-foreground px-7 py-3.5 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors">
+              {t("hero.cta1")}
             </a>
-            <a
-              href="#services"
-              className="border border-primary text-primary px-7 py-3.5 rounded-md text-sm font-semibold hover:bg-primary/5 transition-colors"
-            >
-              Наши услуги
+            <a href="#services" className="border border-primary text-primary px-7 py-3.5 rounded-md text-sm font-semibold hover:bg-primary/5 transition-colors">
+              {t("hero.cta2")}
             </a>
           </div>
           <div className="mt-12 flex items-center gap-8 text-sm text-muted-foreground">
             <div>
               <span className="text-2xl font-heading font-bold text-foreground">50+</span>
-              <br />постоянных клиентов
+              <br />{t("hero.stat1")}
             </div>
             <div className="w-px h-10 bg-border" />
             <div>
               <span className="text-2xl font-heading font-bold text-foreground">15+</span>
-              <br />лет опыта
+              <br />{t("hero.stat2")}
             </div>
             <div className="w-px h-10 bg-border" />
             <div>
               <span className="text-2xl font-heading font-bold text-foreground">100%</span>
-              <br />онлайн
+              <br />{t("hero.stat3")}
             </div>
           </div>
         </motion.div>
@@ -61,11 +56,7 @@ const Hero = () => {
         >
           <div className="relative">
             <div className="absolute -inset-4 bg-primary/10 rounded-2xl -rotate-2" />
-            <img
-              src={heroBg}
-              alt="Профессиональное рабочее пространство"
-              className="relative rounded-xl w-full object-cover aspect-[4/3]"
-            />
+            <img src={heroBg} alt="Professional workspace" className="relative rounded-xl w-full object-cover aspect-[4/3]" />
           </div>
         </motion.div>
       </div>

@@ -1,34 +1,24 @@
 import { motion } from "framer-motion";
 import { Shield, Globe, Clock, HeadphonesIcon } from "lucide-react";
-
-const items = [
-  { icon: Shield, title: "Застрахованы", desc: "Страхование профессиональной ответственности до 50 000 zł" },
-  { icon: Globe, title: "Мультиязычность", desc: "Работаем на русском, английском и польском языках" },
-  { icon: Clock, title: "С 2009 года", desc: "Более 15 лет опыта в бухгалтерии и финансовом учёте" },
-  { icon: HeadphonesIcon, title: "Онлайн", desc: "Работаем удалённо по всей Польше. Документы — в электронном виде" },
-];
+import { useI18n } from "@/lib/i18n";
 
 const About = () => {
+  const { t } = useI18n();
+  const items = [
+    { icon: Shield, title: t("about.a1.title"), desc: t("about.a1.desc") },
+    { icon: Globe, title: t("about.a2.title"), desc: t("about.a2.desc") },
+    { icon: Clock, title: t("about.a3.title"), desc: t("about.a3.desc") },
+    { icon: HeadphonesIcon, title: t("about.a4.title"), desc: t("about.a4.desc") },
+  ];
+
   return (
     <section id="about" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="gold-line w-16 mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Почему выбирают нас
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              FINBIZ CENTRUM — бухгалтерское бюро для предпринимателей в Польше. 
-              Мы специализируемся на обслуживании IT-компаний, строительных предприятий 
-              и бизнесов русскоязычного сообщества. Индивидуальный подход, профессиональный 
-              сервис и средний ценовой сегмент.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{t("about.title")}</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">{t("about.desc")}</p>
             <div className="grid sm:grid-cols-2 gap-6">
               {items.map((item) => (
                 <div key={item.title} className="flex gap-4">
@@ -43,35 +33,16 @@ const About = () => {
               ))}
             </div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-primary rounded-2xl p-10 text-primary-foreground"
-          >
-            <h3 className="text-2xl font-bold mb-6">Дополнительные услуги</h3>
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="bg-primary rounded-2xl p-10 text-primary-foreground">
+            <h3 className="text-2xl font-bold mb-6">{t("about.extra")}</h3>
             <ul className="space-y-4 text-sm opacity-90">
-              <li className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                Юридическая поддержка бизнеса
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                Помощь с легализацией в Польше
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                Управленческие консультации
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                Обучение предпринимателей
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                Бухгалтерия для фондов и организаций
-              </li>
+              {["e1", "e2", "e3", "e4", "e5"].map((k) => (
+                <li key={k} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  {t(`about.${k}`)}
+                </li>
+              ))}
             </ul>
           </motion.div>
         </div>
