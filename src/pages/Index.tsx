@@ -5,6 +5,8 @@ import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import About from "@/components/About";
 import Founder from "@/components/Founder";
+import TaxCalculator from "@/components/TaxCalculator";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,8 +18,10 @@ const Index = () => {
       <Services />
       <Process />
       <Pricing />
+      <TaxCalculator />
       <About />
       <Founder />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
