@@ -80,7 +80,7 @@ const Contact = () => {
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"><Phone className="w-5 h-5 text-primary" /></div>
               <div>
                 <h4 className="font-semibold text-foreground text-sm">{t("contact.phone")}</h4>
-                <a href="tel:+48571287322" className="text-sm text-muted-foreground mt-1 block hover:text-primary transition-colors">+48 571 287 322</a>
+                <a href="tel:511183644" className="text-sm text-muted-foreground mt-1 block hover:text-primary transition-colors">511 183 644</a>
               </div>
             </div>
             <div className="flex gap-4">
@@ -98,8 +98,8 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-3 pt-4">
-              <a href="https://t.me/DinaVo" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-md border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors">Telegram</a>
-              <a href="tel:+48571287322" className="px-5 py-2.5 rounded-md border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors">{t("contact.call")}</a>
+              <a href="https://t.me/FinBizC" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-md border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors">Telegram</a>
+              <a href="tel:511183644" className="px-5 py-2.5 rounded-md border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors">{t("contact.call")}</a>
             </div>
           </motion.div>
         </div>
